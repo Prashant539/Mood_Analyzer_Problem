@@ -19,7 +19,11 @@ namespace MoodAnalyserProblem
             try
             {
 
-                if (message.ToLower().Contains("happy"))
+                if (message.Equals(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Mood should not be empty");
+                }
+                else if((message.ToLower().Contains("happy")))
                 {
                     return "happy";
                 }
